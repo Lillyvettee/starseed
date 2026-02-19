@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react()], // remove all Replit-only plugins
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
@@ -11,11 +11,10 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  root: path.resolve(__dirname, "client"), // your source folder
+  root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"), // Vercel serves 'dist' by default
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-    sourcemap: false, // optional
-    base: "./", // ensures relative paths work for Shopify iframe
+    base: "./",
   },
 });
